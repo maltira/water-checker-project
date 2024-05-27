@@ -1,11 +1,7 @@
 import 'dart:async';
-import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:water_checker/details/drink_selector.dart';
 import '../bar/progressbar.dart';
@@ -13,7 +9,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
-
+//this is a comment
 class waterTitle extends StatefulWidget {
   const waterTitle({super.key});
   @override
