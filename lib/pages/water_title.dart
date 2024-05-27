@@ -7,10 +7,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/routes/default_transitions.dart';
 import 'package:water_checker/details/drink_selector.dart';
-import 'package:water_checker/pages/settings_page.dart';
-import 'package:water_checker/pages/statistic_page.dart';
 import '../bar/progressbar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -28,7 +25,6 @@ class waterTitleState extends State<waterTitle> with SingleTickerProviderStateMi
   int purpose = 0, permCount = 0;
   static const countKey = 'count', purposeKey = 'purpose', percentKey = 'percent', statKey = 'Statistic';
   bool isTap = false, drinkSelected = false;
-  Color _bgcolor = Colors.transparent;
 
   List<String> Statistic = [];
 
