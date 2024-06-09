@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:liquid_progress_indicator_v2/liquid_progress_indicator.dart';
 
 class CustomProgressBar extends StatelessWidget {
