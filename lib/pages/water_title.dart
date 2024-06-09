@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:water_checker/details/drink_selector.dart';
+import 'package:water_checker/details/notify_service.dart';
 import '../bar/progressbar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -120,15 +121,20 @@ class waterTitleState extends State<waterTitle> with SingleTickerProviderStateMi
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  alignment: Alignment.topCenter,
-                  child: Text(
-                    "Water Checker",
-                    style: TextStyle(
-                        color: Color.fromRGBO(55, 55, 55, 1),
-                        fontSize: 36,
-                        fontFamily: 'Calibri',
-                        fontWeight: FontWeight.bold
+                GestureDetector(
+                  onTap: (){
+                    NotificationService().showNotification(title: 'Title', body: 'Body');
+                  },
+                  child: Container(
+                    alignment: Alignment.topCenter,
+                    child: Text(
+                      "Water Checker",
+                      style: TextStyle(
+                          color: Color.fromRGBO(55, 55, 55, 1),
+                          fontSize: 36,
+                          fontFamily: 'Calibri',
+                          fontWeight: FontWeight.bold
+                      ),
                     ),
                   ),
                 ),
