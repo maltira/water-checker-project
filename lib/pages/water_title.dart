@@ -9,8 +9,6 @@ import '../bar/progressbar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
-//this is a comment
 class waterTitle extends StatefulWidget {
   const waterTitle({super.key});
   @override
@@ -86,7 +84,11 @@ class waterTitleState extends State<waterTitle> with SingleTickerProviderStateMi
   }
   deleteProgress() async{
     setState(() {
-      count = 0; permCount = 0; changePercent();
+      count = 0;
+      permCount = 0;
+      changePercent();
+      Statistic.clear();
+      _setStat();
     });
   }
 
@@ -118,9 +120,7 @@ class waterTitleState extends State<waterTitle> with SingleTickerProviderStateMi
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 GestureDetector(
-                  onTap: (){
-                    NotificationService().showNotification(title: 'Title', body: 'Body');
-                  },
+                  onTap: (){},
                   child: Container(
                     alignment: Alignment.topCenter,
                     child: Text(
@@ -140,9 +140,6 @@ class waterTitleState extends State<waterTitle> with SingleTickerProviderStateMi
                 GestureDetector(
                   onTap: () {
                     setState(() {
-                      Statistic.clear();
-                      _setStat();
-                      print(Statistic);
                       deleteProgress();
                     });
                   },
