@@ -1,4 +1,4 @@
-# water_checker
+# Water Tracker
 
 time to drink
 
