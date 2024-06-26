@@ -1,16 +1,16 @@
 # Water Tracker
 
-time to drink
+Приложение создано на основе языка Dart с использованием фреймворка Flutter. 
+## Информация
 
-## Getting Started
+Основная задача приложения - отслеживание выпитой пользователем воды в течение суток. В программу вшита логика авто-сброса прогресса после 00:00, т.е. после наступления следующего дня (прошествия ровно суток).
 
-This project is a starting point for a Flutter application.
+Конечные цели на приложения пока что не выполнены, проект дорабатывается, но уже работоспособен.
 
-A few resources to get you started if this is your first Flutter project:
+## Планы
+· Подключение базы данных Firebase;
+· Благодаря базе данных создать регистрацию и авторизацию;
+· Доработка Push-уведомлений;
+· Добавить In-App уведомления.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
