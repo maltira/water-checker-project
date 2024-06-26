@@ -7,27 +7,23 @@ import 'package:water_checker/pages/statistic_page.dart';
 import 'pages/title.dart';
 import 'pages/water_title.dart';
 
+int lastEnterTime = 0, lastEnterDay = 0;
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-
   await getLastEnterTime();
-  var lifecycleChannel = SystemChannels.lifecycle;
-  lifecycleChannel.setMessageHandler((message) async {
-    switch (message) {
-      case 'AppLifecycleState.resumed': // Приложение вышло из фонового режима
-        if (DateTime.now().hour < lastEnterTime) resetData();
-        break;
-      default:
-        saveLastEnter(DateTime.now());
-        break;
-    }});
 
+  if (DateTime.now().hour < lastEnterTime || DateTime.now().day > lastEnterDay)
+    await resetData();
+  saveLastEnter(DateTime.now());
+
+  print('3');
   runApp(GetMaterialApp(
     theme: ThemeData(fontFamily: 'Calibri'),
     initialRoute: '/',
     getPages: [
-      GetPage(name: '/', page: () => waterTitle()),
-      GetPage(name: '/title', page: () => TitlePage()),
+      GetPage(name: '/', page: () => TitlePage()),
+      GetPage(name: '/water', page: () => waterTitle()),
       GetPage(
         name: '/settings',
         page: () => settingsWater(),
@@ -47,7 +43,7 @@ void main() async{
   ));
 }
 
-int lastEnterTime = 0;
+
 Future resetData() async{
   var prefs = await SharedPreferences.getInstance();
   prefs.setDouble('count', 0);
@@ -57,10 +53,12 @@ Future resetData() async{
 Future saveLastEnter(DateTime Time) async{
   var prefs = await SharedPreferences.getInstance();
   prefs.setInt('lastEnterTime', Time.hour);
+  prefs.setInt('lastEnterDay', Time.day);
 }
 Future getLastEnterTime() async{
   var prefs = await SharedPreferences.getInstance();
   lastEnterTime = prefs.getInt('lastEnterTime') ?? 0;
+  lastEnterDay = prefs.getInt('lastEnterDay') ?? 0;
 }
 
 

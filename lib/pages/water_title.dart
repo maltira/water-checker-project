@@ -42,6 +42,7 @@ class waterTitleState extends State<waterTitle> with SingleTickerProviderStateMi
     end: Offset(0, 1.5),
   ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
 
+
   @override
   void dispose() {
     _controller.dispose();
@@ -94,6 +95,7 @@ class waterTitleState extends State<waterTitle> with SingleTickerProviderStateMi
 
   @override
   Widget build(BuildContext context) {
+    _initPercent();
     return Scaffold(
       backgroundColor: Color(0xFFFBFBFF),
       body: Stack(

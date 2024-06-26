@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
@@ -7,16 +8,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class TitlePage extends StatefulWidget {
   const TitlePage({super.key});
-
   @override
   State<TitlePage> createState() => _TitlePageState();
 }
 
-class _TitlePageState extends State<TitlePage>{
-
+class _TitlePageState extends State<TitlePage> {
   void TimerTime() {
-    Timer(Duration(milliseconds: 2500), () {
-      Navigator.pushReplacementNamed(context, '/water');
+    Timer(Duration(milliseconds: 2000), () {
+      Get.toNamed('/water');
     });
   }
   @override
@@ -27,9 +26,8 @@ class _TitlePageState extends State<TitlePage>{
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      home: Scaffold(
-        body: Container(
+    return Scaffold(
+      body: Container(
             child: Stack(
               children: [
                 Container(
@@ -101,7 +99,6 @@ class _TitlePageState extends State<TitlePage>{
               ],
             )
         ),
-      )
     );
   }
 }
